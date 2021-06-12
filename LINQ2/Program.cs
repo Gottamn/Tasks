@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LINQ2
 {
@@ -11,7 +12,25 @@ namespace LINQ2
 
             // 1.	Проверить, есть ли в последовательности элементы больше чем заданное с консоли значение.
 
-            var read = Console.ReadLine();
+            if (int.TryParse(Console.ReadLine(), out var readStr))
+            {
+                if (numbers.Any(n => n > readStr))
+                {
+                    Console.WriteLine("Ok");
+                }
+                else
+                {
+                    Console.WriteLine("Not ok");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Incorrect value");
+            }
+
+
+
+
         }
     }
 }
